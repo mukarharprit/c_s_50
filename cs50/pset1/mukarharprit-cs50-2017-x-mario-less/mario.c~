@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <cs50.h>
+
+int main(void)
+{
+    printf("height:");
+    int height = GetInt();
+    if (height < 0 || height > 23)
+    {
+        main();
+    }
+    else
+    {
+        int k = 2;
+        int indent = height;
+        for(int i = height; i > 0; i--)
+        {
+            for(int j = 1;j < indent; j++)
+            {
+                printf(" ");
+            }
+            indent--;
+            for(int j = 0; j < k; j++)
+            {
+                printf("#");
+            }
+            k++;
+            printf("\n");
+        }
+    }
+}

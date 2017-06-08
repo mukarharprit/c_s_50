@@ -1,0 +1,49 @@
+1. What’s stdint.h?
+Ans - typedefs and macros for making int variable of custom size
+
+2. What’s the point of using uint8_t, uint32_t, int32_t, and uint16_t in a program?
+Ans - You can fill up exactly the amount of space you want in a file
+    uint8_t = unsigneed integer 8 bit , uint32_t = unsigneed integer 32 bit ,
+    int32_t = integer 32 bit
+    
+3. How many bytes is a BYTE, a DWORD, a LONG, and a WORD, respectively?
+Ans - BYTE = 1 byte
+    DWORD= 4 bytes
+    LONG = 4 bytes
+    WORD = 2 bytes
+
+4. What (in ASCII, decimal, or hexadecimal) must the first two bytes of any BMP file be?
+(Leading bytes used to identify file formats (with high probability) are generally called "magic numbers.)"
+Ans.
+
+Hex:    0x424d
+ASCII:  BM (bitmap!)
+
+5. What’s the difference between bfSize and biSize?
+Ans. bfSize - total number of bytes in the file
+    biSize - number of bytes in the info header
+
+6. What does it mean if biHeight is negative?
+Ans. the bitmap is a top-down DIB with the origin at the upper left corner
+
+7. What field in BITMAPINFOHEADER specifies the BMP’s color depth (i.e., bits
+per pixel)?
+Ans. biBitCount
+
+8. Why might fopen return NULL in lines 24 and 32 of copy.c?
+Ans. when it can't find the file then it will return NULL
+
+9. Why is the third argument to fread always 1 in our code?
+Ans. 1 represent read here
+
+10. What value does line 65 of copy.c assign  to padding if bi.biWidth is 3?
+Ans. int padding =  (4 - (bi.biWidth * sizeof(RGBTRIPLE)) % 4) % 4;
+        = (4 - ( 3 * (3*1) )%4 ) %4
+        = 3
+
+11. What does fseek do?
+Ans. it moves pointer to a specific location in a file
+
+12. What is SEEK_CUR?
+Ans. the current file position of cursor 
+
